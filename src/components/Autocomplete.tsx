@@ -29,8 +29,10 @@ export const Autocomplete: React.FC<Props> = ({
   );
 
   const handleQueryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(event.target.value);
-    applyQuery(event.target.value);
+    const copyQuery = (event.target.value).trim();
+
+    setQuery(copyQuery);
+    applyQuery(copyQuery);
     onSelect(null);
   };
 
